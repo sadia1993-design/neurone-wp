@@ -32,3 +32,8 @@ if (file_exists(get_template_directory() . '/inc/class-wp-bootstrap-navwalker.ph
 {
 	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
+// REGISTERING CUSTOM post type
+if (file_exists(get_template_directory() . '/inc/custom-post-types.php'))
+{
+	require_once get_template_directory() . '/inc/custom-post-types.php';
+}
