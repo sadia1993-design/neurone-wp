@@ -4,54 +4,41 @@
 		<div class="container">
 			<div class="row">
 				<!-- start single footer widget -->
+
+
 				<div class="col-sm-6 col-md-4">
 					<div class="footer-widget about-us">
-						<a href="index.html"><img src="assets/img/logo-white.png" alt="" /></a>
-						<p>Collaboratively create resource sucking manufactured products and worldwide e-services. Seamlessly revol tionize holistic data rather than intermandated results. Energistically innovate open-source systems for performance based total.</p>
-						<div class="online-card">
-							<a href="#"><img src="assets/img/online-card/1.png" alt="" /></a>
-							<a href="#"><img src="assets/img/online-card/2.png" alt="" /></a>
-							<a href="#"><img src="assets/img/online-card/3.png" alt="" /></a>
-							<a href="#"><img src="assets/img/online-card/4.png" alt="" /></a>
-						</div>
+						<?php dynamic_sidebar('footer-1'); ?>
 					</div>
-				</div><!-- end single footer widget -->
+				</div>
+                <!-- end single footer widget -->
 
 				<!-- start single footer widget -->
 				<div class="col-sm-6 col-md-2">
 					<div class="footer-widget usefull-link">
-						<h3>Useful Links</h3>
-						<ul>
-							<li><a href="#"><i class="fa fa-angle-right"></i>About Us</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Services</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Works</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Contact</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i>Blog</a></li>
-						</ul>
+						<?php dynamic_sidebar('footer-2'); ?>
 					</div>
 				</div><!-- end single footer widget -->
 
 				<!-- start single footer widget -->
 				<div class="col-sm-6 col-md-3">
 					<div class="footer-widget latest-post">
-						<h3>Latest Post</h3>
+						<h3 class="widget-title">Latest Post</h3>
 						<ul>
 							<li>
-								<img src="assets/img/latest-post/1.png" alt="" />
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/1.png" alt="" />
 								<p><a href="#">Headset No Longer Wire For Sound</a></p>
 								<span>12 May 2016</span>
 
 							</li>
 							<li>
-								<img src="assets/img/latest-post/2.png" alt="" />
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/2.png" alt="" />
 								<p><a href="#">Headset No Longer Wire For Sound</a></p>
 								<span>12 May 2016</span>
 
 							</li>
 							<li>
-								<img src="assets/img/latest-post/3.png" alt="" />
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/3.png" alt="" />
 								<p><a href="#">Headset No Longer Wire For Sound</a></p>
 								<span>12 May 2016</span>
 
@@ -64,7 +51,7 @@
 				<!-- start single footer widget -->
 				<div class="col-sm-6 col-md-3">
 					<div class="footer-widget news-letter">
-						<h3>NewsLetter Subscription</h3>
+						<h3 class="widget-title">NewsLetter Subscription</h3>
 						<p>Subscribe to get the latest news, update and offer information. Don't worry, we won't send spam!</p>
 
 						<form class="subscribe-form mailchimp" method="post">

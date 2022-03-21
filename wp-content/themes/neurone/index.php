@@ -4,7 +4,6 @@
 		<section class="slider-area">
 
             <?php
-
                 $loop = new WP_Query( array(
 	                'post_type' => 'neurone_slider',
 	                'posts_per_page' => 2,
@@ -12,13 +11,7 @@
 	                'order' => 'ASC'
                 ) );
 
-
-
-                while ( $loop->have_posts() ) :
-	                $loop->the_post();
-
-
-                ?>
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 	                <!-- slide item one -->
                     <div class="homepage-slider " style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ) ?>)">
@@ -40,11 +33,9 @@
                     </div>
 
                 <?php
-
-                endwhile;
-                wp_reset_query();
+                    endwhile;
+                    wp_reset_query();
                 ?>
-
 			
 		</section><!-- slider area end -->
 	
@@ -63,37 +54,35 @@
 					</div>
 				</div>
 				<div class="row">
-					<!-- single intro -->
-					<div class="col-md-4">
-						<div class="single-intro">
-							<div class="intro-img intro-bg1"></div>
-							<div class="intro-details text-center">
-								<h3>About Business</h3>
-								<p>Seamlessly envisioneer extensive interfaces and back wardcompatible applications. Proactively promote timely best.</p>
-							</div>
-						</div>
-					</div>
-					<!-- single intro -->
-					<div class="col-md-4">
-						<div class="single-intro">
-							<div class="intro-img intro-bg2"></div>
-							<div class="intro-details text-center">
-								<h3>Business Growth</h3>
-								<p>Seamlessly envisioneer extensive interfaces and back wardcompatible applications. Proactively promote timely best.</p>
-							</div>
-						</div>
-					</div>
-					<!-- single intro -->
-					<div class="col-md-4">
-						<div class="single-intro">
-							<div class="intro-img intro-bg3"></div>
-							<div class="intro-details text-center">
-								<h3>Sustainability</h3>
-								<p>Seamlessly envisioneer extensive interfaces and back wardcompatible applications. Proactively promote timely best.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+
+                    <?php
+                        $feature = new WP_Query( array(
+                            'post_type' => 'neurone_feature',
+                            'posts_per_page' => 3,
+                            'post_status' => 'publish',
+                            'order' => 'ASC',
+                            'orderby'=>'menu_order'
+                        ) );
+
+                        while ( $feature->have_posts() ) : $feature->the_post(); ?>
+
+                            <div class="col-md-4">
+                                <div class="single-intro">
+                                    <div class="intro-img"  style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ) ?> )"  ></div>
+                                    <div class="intro-details text-center">
+                                        <h3><?php the_title(); ?></h3>
+                                        <p><?php the_content(); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <?php
+                        endwhile;
+                        wp_reset_query();
+                    ?>
+
+
+                </div>
 			</div>
 		</section><!-- intro area end -->
 	
@@ -133,56 +122,32 @@
 				</div>
 				
 				<div class="row">
-					<!-- single service -->
+
+
+                    <?php
+                        $service = new wp_query([
+                            'post_type' => 'neurone_service',
+                            'post_per_page' => 6,
+                            'order' => 'ASC'
+                        ]);
+
+                        while( $service->have_posts() ): $service->the_post()  ?>
+
+                    <!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img class="hvr-buzz-out" src="<?php echo get_template_directory_uri(); ?>/assets/img/services/1.png" alt="" />
-							<h3><a href="#">Performance</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
+							<?php the_post_thumbnail('thumbnail' , array('class' => 'hvr-buzz-out')) ;?>
+                            <h3><a href="<?php echo get_post_meta(get_the_ID(), 'btn_link', true)?>"><?php the_title(); ?></a></h3>
+							<p><?php the_content();?></p>
 						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/2.png" alt="" />
-							<h3><a href="#">Sustainability</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/3.png" alt="" />
-							<h3><a href="#">Web Design</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/4.png" alt="" />
-							<h3><a href="#">Web Development</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/5.png" alt="" />
-							<h3><a href="#">Branding Design</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/6.png" alt="" />
-							<h3><a href="#">Marketing </a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+				    </div>
+
+				    <?php
+				       endwhile;
+				       wp_reset_query();
+				    ?>
+
+			    </div>
 		</section><!-- end services section -->
 	
 

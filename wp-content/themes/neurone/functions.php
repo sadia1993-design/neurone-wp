@@ -37,3 +37,9 @@ if (file_exists(get_template_directory() . '/inc/custom-post-types.php'))
 {
 	require_once get_template_directory() . '/inc/custom-post-types.php';
 }
+
+// REGISTERING CUSTOM widgets
+if (file_exists(get_template_directory() . '/inc/custom-widgets.php'))
+{
+	require_once get_template_directory() . '/inc/custom-widgets.php';
+}

@@ -66,6 +66,10 @@ function neurone_theme_supports()
 			'flex-height' => true,
 		)
 	);
+
+	// disable gutenber
+	remove_theme_support( 'widgets-block-editor' );
+
 }
 
 add_action('after_setup_theme', 'neurone_theme_supports');
